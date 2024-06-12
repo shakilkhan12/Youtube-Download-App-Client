@@ -25,7 +25,7 @@ const Details = ({ url, details}: PropTypes) => {
   const downloadVideo = async (itag: number) => {
     setDownloadStart(true)
     try {
-      const response = await axios.get('http://localhost:5000/api/video/download', {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_API}/video/download`, {
         params: { url, socket: socket?.id, itag },
         responseType: 'blob',
       });

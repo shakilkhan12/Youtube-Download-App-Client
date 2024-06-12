@@ -17,7 +17,7 @@ const Search = () => {
     dispatch(setFormats([]))
     setVideoDetails(null)
     try {
-      const {data} = await axios.get('http://localhost:5000/api/video/video-details', {
+      const {data} = await axios.get(`${process.env.NEXT_PUBLIC_API}/video/video-details`, {
         params: {url}
       })
       console.log(data)
